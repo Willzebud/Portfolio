@@ -1,26 +1,44 @@
 /* eslint-disable @next/next/no-img-element */
+import { ComponentPropsWithoutRef } from "react";
 import { Section } from "./Section";
+import { cn } from "@/lib/utils";
+
+const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
+  return (
+    <span
+      className={cn(
+        "bg-accent/30 font-mono hover:bg-accent/50 transition-colors border border-accent px-1 py-0.5 rounded -m-1",
+        className
+      )}
+      {...props}
+    />
+  );
+};
 
 export const Hero = () => {
   return (
-    <Section className="flex max-lg:flex-col items-start">
-      <div className="flex-[2]">
-        <h2 className="font-caption text-5xl text-primary">Willyam Ribière</h2>
+    <Section className="flex max-lg:flex-col items-start gap-6">
+      <div className="flex-[2] flex flex-col gap-2">
+        <h2 className="font-caption font-bold text-5xl">
+          Hello! I&apos;m <span className="text-primary">Willyam</span>. 👋🏻
+        </h2>
         <h3 className="text-3xl font-caption">
-          React Next.js Tailwind CSS Developper
+          <Code className="inline-flex items-center">
+            React Next.js Tailwind CSS Developper
+          </Code>
         </h3>
-        <p>
-          Hello, welcome to my <span className="text-primary">portfolio</span> !
+        <p className="text-base mt-2">
+          Welcome to my <span className="text-primary">portfolio</span> !
           <br />I am a <span className="text-primary">
             junior developer
           </span>{" "}
           looking for an <span className="text-primary">apprenticeship</span>
         </p>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 max-md:m-auto ml-auto">
         <img
           src="/PhotoWillyamRbr.svg"
-          className="w-full h-auto max-w-40"
+          className="w-full h-auto max-w-40 max-md:w-56"
           alt="willyam's picture"
         />
       </div>
