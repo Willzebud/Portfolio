@@ -6,6 +6,7 @@ import { Section } from "./Section"; // Assuming this is your section wrapper co
 import ProjectsContent from "./ProjectsContent";
 import AboutMeContent from "./AboutMeContent";
 import SkillsContent from "./SkillsContent";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export const PortfolioSection = () => {
   const [activeTab, setActiveTab] = useState("projects");
@@ -50,10 +51,12 @@ export const PortfolioSection = () => {
       </nav>
 
       {/* Content for each tab */}
-      <div className="w-full max-w-4xl h-96 mt-4 mb-8 p-6 bg-background border border-accent rounded shadow-md transition-all duration-500">
-        {activeTab === "projects" && <ProjectsContent />}
-        {activeTab === "about" && <AboutMeContent />}
-        {activeTab === "skills" && <SkillsContent />}
+      <div className="w-full max-w-4xl h-96 mt-4 mb-8 bg-background border border-accent shadow-md transition-all duration-500">
+        <AuroraBackground className="w-full max-w-4xl h-96 mb-8">
+          {activeTab === "projects" && <ProjectsContent />}
+          {activeTab === "about" && <AboutMeContent />}
+          {activeTab === "skills" && <SkillsContent />}
+        </AuroraBackground>
       </div>
     </Section>
   );
