@@ -17,10 +17,10 @@ const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
 
 export const Hero = () => {
   return (
-    <Section className="flex max-lg:flex-col items-start gap-6">
+    <Section className="flex max-lg:flex-col items-center justify-between gap-6">
       <div className="flex-[2] flex flex-col gap-2">
         <h2 className="font-caption font-bold text-5xl">
-          Hello! I&apos;m <span className="text-primary">Willyam</span>. 👋🏻
+          Hello! I&apos;m <span className="text-primary">Willyam</span>.
         </h2>
         <h3 className="text-3xl font-caption">
           <Code className="inline-flex items-center">
@@ -28,14 +28,14 @@ export const Hero = () => {
           </Code>
         </h3>
         <p className="text-base mt-2">
-          Welcome to my <span className="text-primary">portfolio</span> !
-          <br />I am a <span className="text-primary">
-            junior developer
-          </span>{" "}
-          looking for an <span className="text-primary">apprenticeship</span>
+          Welcome to my <span className="text-primary">portfolio</span>! I am a{" "}
+          <span className="text-primary">junior developer</span> looking for an{" "}
+          <span className="text-primary">apprenticeship</span>.
         </p>
       </div>
-      <div className="flex-1 max-md:m-auto ml-auto">
+      <div className="flex-shrink-0 mr-0">
+        {" "}
+        {/* Changer ml-auto en mr-0 pour aligner correctement */}
         <img
           src="/PhotoWillyamRbr.svg"
           className="w-full h-auto max-w-40 max-md:w-56"

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Section } from "./Section"; // Assuming this is your section wrapper component
+import { Section } from "./Section";
 import ProjectsContent from "./ProjectsContent";
 import AboutMeContent from "./AboutMeContent";
 import SkillsContent from "./SkillsContent";
@@ -16,7 +16,7 @@ export const PortfolioSection = () => {
   };
 
   return (
-    <Section className="flex flex-col items-center gap-6 mt-8">
+    <Section className="flex flex-col items-center gap-6">
       {/* Navigation Tabs */}
       <nav className="flex space-x-4 text-lg font-medium">
         <button
@@ -50,8 +50,7 @@ export const PortfolioSection = () => {
         </button>
       </nav>
 
-      {/* Content for each tab */}
-      <div className="w-full max-w-4xl h-96 mt-4 mb-8 bg-background border border-accent shadow-md transition-all duration-500">
+      <div className="w-full max-w-4xl h-96 mb-8 bg-background border border-accent shadow-md transition-all duration-500">
         <AuroraBackground className="w-full max-w-4xl h-96 mb-8">
           {activeTab === "projects" && <ProjectsContent />}
           {activeTab === "about" && <AboutMeContent />}
