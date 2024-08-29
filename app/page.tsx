@@ -1,3 +1,4 @@
+import { Footer } from "./_components/Footer";
 import { Header } from "./_components/Header";
 import { Hero } from "./_components/Hero";
 import { PortfolioSection } from "./_components/PortfolioSections";
@@ -15,6 +16,10 @@ export default function Home() {
       <Spacing size="md" />
 
       <PortfolioSection />
+
+      <Spacing size="md" />
+
+      <Footer />
     </main>
   );
 }
