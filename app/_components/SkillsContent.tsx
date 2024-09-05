@@ -1,16 +1,43 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes"; // Utiliser next-themes pour détecter le mode
 
 const skills = [
-  { name: "JavaScript", level: "35%", color: "bg-[#FF6F00]" },
-  { name: "React", level: "33%", color: "bg-[#FF9A13]" },
-  { name: "TypeScript", level: "28%", color: "bg-[#FFA726]" },
-  { name: "Next.js", level: "31%", color: "bg-[#FFCA28]" },
-  { name: "TailWind", level: "30%", color: "bg-[#FFD54F]" },
+  {
+    name: "JavaScript",
+    level: "35%",
+    darkColor: "bg-[#FF6F00]",
+    lightColor: "bg-[#9E0000]",
+  },
+  {
+    name: "React",
+    level: "33%",
+    darkColor: "bg-[#FF9A13]",
+    lightColor: "bg-[#B60101]",
+  },
+  {
+    name: "TypeScript",
+    level: "28%",
+    darkColor: "bg-[#FFA726]",
+    lightColor: "bg-[#C80000]",
+  },
+  {
+    name: "Next.js",
+    level: "31%",
+    darkColor: "bg-[#FFCA28]",
+    lightColor: "bg-[#D60000]",
+  },
+  {
+    name: "TailWind",
+    level: "30%",
+    darkColor: "bg-[#FFD54F]",
+    lightColor: "bg-[#E00000]",
+  },
 ];
 
 const SkillsContent = () => {
   const [isVisible, setIsVisible] = useState(false);
   const skillsSectionRef = useRef<HTMLDivElement | null>(null);
+  const { theme } = useTheme(); // Utiliser le hook useTheme pour détecter le mode
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,13 +77,13 @@ const SkillsContent = () => {
         >
           <div
             className={`absolute left-0 top-0 h-full rounded-full ${
-              skill.color
-            } text-black font-bold text-sm flex items-center justify-between px-3 skill-bar ${
+              theme === "dark" ? skill.darkColor : skill.lightColor
+            } text-base font-bold text-sm flex items-center justify-between px-3 skill-bar ${
               isVisible ? "active" : ""
-            }`}
+            } ${theme === "dark" ? "text-black" : "text-white"}`} // Ajouter la classe conditionnelle pour le texte
             style={{ width: isVisible ? getWidthStyle(skill.level) : "0%" }}
           >
-            <span className="text-black font-medium">{skill.name}</span>
+            <span className="font-medium">{skill.name}</span>
             <span className="ml-4">{skill.level}</span>
           </div>
         </div>
