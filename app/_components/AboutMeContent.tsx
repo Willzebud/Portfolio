@@ -1,7 +1,7 @@
-import content from "@/app/_data/content.json"; // Importez le contenu JSON
+import content from "@/app/_data/content.json";
 
 const AboutMeContent = () => {
-  const { text } = content.aboutMe; // Extraire le contenu depuis JSON
+  const { text } = content.aboutMe;
 
   return (
     <div className="font-mono text-foreground">

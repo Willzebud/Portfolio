@@ -6,10 +6,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import content from "@/app/_data/content.json"; // Importez le contenu JSON
+import content from "@/app/_data/content.json";
 
 const ProjectsContent = () => {
-  const { project1 } = content.projects; // Extraire le contenu depuis JSON
+  const { project1 } = content.projects;
 
   return (
     <div className="font-mono">

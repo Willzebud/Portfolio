@@ -1,4 +1,3 @@
-// app/_components/ModeToggle.tsx
 "use client";
 
 import * as React from "react";

@@ -24,7 +24,6 @@ export const AuroraBackground = ({
       >
         <div className="absolute inset-0 overflow-hidden">
           <div
-            //   I'm sorry but this is what peak developer performance looks like // trigger warning
             className={cn(
               `
             [--white-gradient:repeating-linear-gradient(100deg,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.5)_7%,var(--transparent)_10%,var(--transparent)_12%,rgba(255,255,255,0.5)_16%)]
@@ -47,7 +46,6 @@ export const AuroraBackground = ({
             )}
           ></div>
         </div>
-        {/* Assure-toi que le texte a une couleur blanche */}
         <div className="relative z-10 text-white p-4">{children}</div>
       </div>
     </main>

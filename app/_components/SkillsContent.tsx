@@ -17,11 +17,11 @@ const SkillsContent = () => {
           className="relative w-full h-6 rounded-full bg-transparent"
         >
           <div
-            className={`absolute left-0 top-0 h-full rounded-full ${skill.color} text-black font-bold text-sm flex items-center justify-between px-2`}
-            style={{ width: skill.level }}
+            className={`absolute left-0 top-0 h-full rounded-full ${skill.color} text-black font-bold text-sm flex items-center justify-between px-3`}
+            style={{ width: "auto" }}
           >
             <span className="text-black font-medium">{skill.name}</span>
-            <span>{skill.level}</span>
+            <span className="ml-4">{skill.level}</span>
           </div>
         </div>
       ))}

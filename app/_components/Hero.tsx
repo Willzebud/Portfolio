@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import { ComponentPropsWithoutRef } from "react";
 import { Section } from "./Section";
 import { cn } from "@/lib/utils";
-import content from "@/app/_data/content.json"; // Importez le contenu JSON
+import content from "@/app/_data/content.json";
 
 const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
   return (
@@ -17,7 +16,7 @@ const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
 };
 
 export const Hero = () => {
-  const { greeting, name, title, introduction } = content.hero; // Extraire le contenu depuis JSON
+  const { greeting, name, title, introduction } = content.hero;
 
   return (
     <Section className="flex max-lg:flex-col items-center justify-between gap-6">
