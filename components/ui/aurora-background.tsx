@@ -26,9 +26,9 @@ export const AuroraBackground = ({
           <div
             className={cn(
               `
-            [--white-gradient:repeating-linear-gradient(100deg,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.5)_7%,var(--transparent)_10%,var(--transparent)_12%,rgba(255,255,255,0.5)_16%)]
-            [--dark-gradient:repeating-linear-gradient(100deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0.5)_7%,var(--transparent)_10%,var(--transparent)_12%,rgba(0,0,0,0.5)_16%)]
-            [--aurora:repeating-linear-gradient(100deg,rgba(177,38,70,1)_10%,rgba(200,55,85,0.9)_20%,rgba(220,60,95,0.8)_30%,rgba(240,65,105,0.7)_40%,rgba(255,70,115,0.6)_50%,rgba(177,38,70,0.5)_60%,rgba(200,55,85,0.4)_70%,rgba(220,60,95,0.3)_80%,rgba(240,65,105,0.2)_90%)]
+            [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
+            [--dark-gradient:repeating-linear-gradient(100deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)]
+            [--aurora:repeating-linear-gradient(100deg,var(--blue-500)_10%,var(--indigo-300)_15%,var(--blue-300)_20%,var(--violet-200)_25%,var(--blue-400)_30%)]
             [background-image:var(--white-gradient),var(--aurora)]
             dark:[background-image:var(--dark-gradient),var(--aurora)]
             [background-size:300%,_200%]
