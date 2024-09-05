@@ -2,6 +2,7 @@
 import { ComponentPropsWithoutRef } from "react";
 import { Section } from "./Section";
 import { cn } from "@/lib/utils";
+import content from "@/app/_data/content.json"; // Importez le contenu JSON
 
 const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
   return (
@@ -16,27 +17,20 @@ const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
 };
 
 export const Hero = () => {
+  const { greeting, name, title, introduction } = content.hero; // Extraire le contenu depuis JSON
+
   return (
     <Section className="flex max-lg:flex-col items-center justify-between gap-6">
       <div className="flex-[2] flex flex-col gap-2">
         <h2 className="font-caption font-bold text-5xl">
-          Hello! I&apos;m <span className="text-brandPrimary">Willyam</span>.
+          {greeting} <span className="text-brandPrimary">{name}</span>.
         </h2>
         <h3 className="text-3xl font-caption">
-          <Code className="inline-flex items-center">
-            React Next.js Tailwind CSS Developper
-          </Code>
+          <Code className="inline-flex items-center">{title}</Code>
         </h3>
-        <p className="text-base mt-2">
-          Welcome to my{" "}
-          <span className="text-brandPrimary font-bold">portfolio</span>! I am a{" "}
-          <span className="text-brandPrimary font-bold">junior developer</span>{" "}
-          looking for an{" "}
-          <span className="text-brandPrimary font-bold">apprenticeship</span>.
-        </p>
+        <p className="text-base mt-2">{introduction}</p>
       </div>
       <div className="flex-shrink-0 mr-0">
-        {" "}
         <img
           src="/PhotoWillyamRbr.svg"
           className="w-full h-auto max-w-40 max-md:w-56"
