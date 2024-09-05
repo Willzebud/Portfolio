@@ -27,7 +27,16 @@ export const Hero = () => {
         <h3 className="text-3xl font-caption">
           <Code className="inline-flex items-center">{title}</Code>
         </h3>
-        <p className="text-base mt-2">{introduction}</p>
+        <p className="text-base mt-2">
+          Welcome to my{" "}
+          <span className="text-brandPrimary font-medium">portfolio</span>! I am
+          a{" "}
+          <span className="text-brandPrimary font-medium">
+            junior developer
+          </span>{" "}
+          looking for an{" "}
+          <span className="text-brandPrimary font-medium">apprenticeship</span>.
+        </p>
       </div>
       <div className="flex-shrink-0 mr-0">
         <img
