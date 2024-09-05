@@ -66,6 +66,9 @@ const config: Config = {
         brandPrimary: {
           DEFAULT: "#FF9A13",
         },
+        brandSecondary: {
+          DEFAULT: "#9E0000",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

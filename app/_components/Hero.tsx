@@ -22,20 +22,29 @@ export const Hero = () => {
     <Section className="flex max-lg:flex-col items-center justify-between gap-6">
       <div className="flex-[2] flex flex-col gap-2">
         <h2 className="font-caption font-bold text-5xl">
-          {greeting} <span className="text-brandPrimary">{name}</span>.
+          {greeting}{" "}
+          <span className="text-brandSecondary dark:text-brandPrimary">
+            {name}
+          </span>
+          .
         </h2>
         <h3 className="text-3xl font-caption">
           <Code className="inline-flex items-center">{title}</Code>
         </h3>
         <p className="text-base mt-2">
           Welcome to my{" "}
-          <span className="text-brandPrimary font-medium">portfolio</span>! I am
-          a{" "}
-          <span className="text-brandPrimary font-medium">
+          <span className="font-medium text-brandSecondary dark:text-brandPrimary">
+            portfolio
+          </span>
+          ! I am a{" "}
+          <span className="font-medium text-brandSecondary dark:text-brandPrimary">
             junior developer
           </span>{" "}
           looking for an{" "}
-          <span className="text-brandPrimary font-medium">apprenticeship</span>.
+          <span className="font-medium text-brandSecondary dark:text-brandPrimary">
+            apprenticeship
+          </span>
+          .
         </p>
       </div>
       <div className="flex-shrink-0 mr-0">

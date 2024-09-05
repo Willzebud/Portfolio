@@ -22,8 +22,10 @@ export const PortfolioSection = () => {
         <button
           onClick={() => handleTabClick("projects")}
           className={cn(
-            activeTab === "projects" ? "text-brandPrimary" : "text-foreground",
-            "hover:text-brandPrimary transition-colors duration-300"
+            activeTab === "projects"
+              ? "text-brandSecondary dark:text-brandPrimary"
+              : "text-foreground",
+            "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
           Projects
@@ -32,8 +34,10 @@ export const PortfolioSection = () => {
         <button
           onClick={() => handleTabClick("about")}
           className={cn(
-            activeTab === "about" ? "text-brandPrimary" : "text-foreground",
-            "hover:text-brandPrimary transition-colors duration-300"
+            activeTab === "about"
+              ? "text-brandSecondary dark:text-brandPrimary"
+              : "text-foreground",
+            "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
           About me
@@ -42,8 +46,10 @@ export const PortfolioSection = () => {
         <button
           onClick={() => handleTabClick("skills")}
           className={cn(
-            activeTab === "skills" ? "text-brandPrimary" : "text-foreground",
-            "hover:text-brandPrimary transition-colors duration-300"
+            activeTab === "skills"
+              ? "text-brandSecondary dark:text-brandPrimary"
+              : "text-foreground",
+            "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
           Skills
