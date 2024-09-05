@@ -1,18 +1,28 @@
+"use client";
+
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Section } from "./Section";
 import { LinkedinIcon } from "./icons/LinkedinIcon";
 import { GithubIcon } from "./icons/GithubIcon";
+import { ModeToggle } from "./ModeToggle";
 
 export const Header = () => {
   return (
     <header className="sticky top-0 py-4 bg-background">
-      <Section className="flex items-baseline">
+      <Section className="flex items-center justify-between">
+        {/* Logo ou titre du site */}
         <h1 className="text-lg font-bold card-foreground font-caption">
           willyam.com
         </h1>
-        <div className="flex-1" />
+
+        {/* Icône de basculement de thème centré */}
+        <div className="flex-1 flex justify-center">
+          <ModeToggle />
+        </div>
+
+        {/* Liens sociaux et autres éléments alignés à droite */}
         <ul className="flex items-center gap-2">
           <Link
             href="https://www.linkedin.com/in/willyamribiere/"
