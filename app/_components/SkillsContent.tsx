@@ -37,7 +37,7 @@ const skills = [
 const SkillsContent = () => {
   const [isVisible, setIsVisible] = useState(false);
   const skillsSectionRef = useRef<HTMLDivElement | null>(null);
-  const { theme } = useTheme(); // Utiliser le hook useTheme pour détecter le mode
+  const { theme } = useTheme();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,7 +80,7 @@ const SkillsContent = () => {
               theme === "dark" ? skill.darkColor : skill.lightColor
             } text-base font-bold text-sm flex items-center justify-between px-3 skill-bar ${
               isVisible ? "active" : ""
-            } ${theme === "dark" ? "text-black" : "text-white"}`} // Ajouter la classe conditionnelle pour le texte
+            } ${theme === "dark" ? "text-black" : "text-white"}`}
             style={{ width: isVisible ? getWidthStyle(skill.level) : "0%" }}
           >
             <span className="font-medium">{skill.name}</span>
