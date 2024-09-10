@@ -15,12 +15,8 @@ export const Header = () => {
         <h1 className="text-lg font-bold card-foreground font-caption">
           willyam.com
         </h1>
-
-        <div className="flex-1 flex justify-center">
-          <ModeToggle />
-        </div>
-
         <ul className="flex items-center gap-2">
+          <ModeToggle />
           <Link
             href="https://www.linkedin.com/in/willyamribiere/"
             className={cn(buttonVariants({ variant: "outline" }), "size-6 p-0")}

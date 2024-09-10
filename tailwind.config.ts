@@ -61,7 +61,7 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         custom: {
-          DEFAULT: "#C7C7C7",
+          DEFAULT: "#CFCFCF",
         },
         brandPrimary: {
           DEFAULT: "#FF9A13",
