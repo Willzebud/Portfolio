@@ -5,6 +5,7 @@ import { ReactIcon } from "./icons/ReactIcon";
 import { TypeScriptIcon } from "./icons/TypeScriptIcon";
 import { NextJsIcon } from "./icons/NextJsIcone";
 import { TailWindIcon } from "./icons/TailWindIcon";
+import { StrapiIcon } from "./icons/StrapiIcon";
 
 const skills = [
   {
@@ -19,7 +20,13 @@ const skills = [
     level: "33%",
     darkColor: "bg-[#FF9A13]",
     lightColor: "bg-[#B60101]",
-    icon: <ReactIcon size={30} />,
+    icon: (
+      <ReactIcon
+        size={30}
+        className="animate-spin"
+        style={{ animationDuration: "10s" }}
+      />
+    ),
   },
   {
     name: "TypeScript",
@@ -42,12 +49,21 @@ const skills = [
     lightColor: "bg-[#E00000]",
     icon: <TailWindIcon size={30} />,
   },
+  {
+    name: "Strapi",
+    level: "20%",
+    darkColor: "bg-[#FEE287]",
+    lightColor: "bg-[#ED0100]",
+    icon: <StrapiIcon size={30} />,
+  },
 ];
 
 const SkillsContent = () => {
   const [isVisible, setIsVisible] = useState(false);
   const skillsSectionRef = useRef<HTMLDivElement | null>(null);
   const { theme } = useTheme();
+
+  const textColor = theme === "dark" ? "text-white" : "text-black";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -82,22 +98,17 @@ const SkillsContent = () => {
     <div
       id="skills-section"
       ref={skillsSectionRef}
-      className="flex flex-col gap-8"
+      className="mx-auto flex flex-col gap-8 w-full max-w-xl" // Centrage et largeur max
     >
-      {skills.map((skill, index) => (
-        <div key={skill.name} className="flex items-center space-x-4">
+      {skills.map((skill) => (
+        <div
+          key={skill.name}
+          className="flex items-center space-x-4 first:mt-2"
+        >
           {/* Logo et nom */}
-          <div className="flex items-center space-x-2 w-1/6">
-            <span className={theme === "dark" ? "text-white" : "text-black"}>
-              {skill.icon}
-            </span>
-            <span
-              className={`font-medium ${
-                theme === "dark" ? "text-white" : "text-black"
-              }`}
-            >
-              {skill.name}
-            </span>
+          <div className="flex items-center space-x-2 w-1/4">
+            <span className={textColor}>{skill.icon}</span>
+            <span className={`font-medium ${textColor}`}>{skill.name}</span>
           </div>
 
           {/* Barre de progression */}
