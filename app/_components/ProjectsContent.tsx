@@ -6,10 +6,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import content from "@/app/_data/content.json";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import projectsContent from "@/app/_data/projectsContent.json";
 
 const ProjectsContent = () => {
-  const { project1 } = content.projects;
+  const { project1 } = projectsContent.projects;
 
   return (
     <div className="font-mono">
@@ -24,6 +31,24 @@ const ProjectsContent = () => {
         </DialogTrigger>
         <DialogContent className="max-w-md max-h-[75vh] overflow-y-auto bg-background text-foreground">
           <DialogHeader>
+            {/* Carousel */}
+            <Carousel className="w-full max-w-xs mx-auto">
+              <CarouselContent>
+                {project1.images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <img
+                        src={image.url}
+                        alt={image.alt}
+                        className="aspect-square object-contain w-full h-full"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute -left-8 top-1/2 transform -translate-y-1/2 z-10" />
+              <CarouselNext className="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10" />
+            </Carousel>
             <DialogTitle className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
               {project1.realisationTitle}
             </DialogTitle>
