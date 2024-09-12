@@ -46,8 +46,8 @@ const ProjectsContent = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute -left-8 top-1/2 transform -translate-y-1/2 z-10" />
-              <CarouselNext className="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10" />
+              <CarouselPrevious className="absolute -left-9 top-1/2 transform -translate-y-1/2 z-10" />
+              <CarouselNext className="absolute -right-9 top-1/2 transform -translate-y-1/2 z-10" />
             </Carousel>
             <DialogTitle className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
               {project1.realisationTitle}
