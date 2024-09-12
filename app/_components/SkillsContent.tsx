@@ -95,7 +95,7 @@ const SkillsContent = () => {
     <div
       id="skills-section"
       ref={skillsSectionRef}
-      className="mx-auto flex flex-col gap-8 w-full max-w-xl" // Centrage et largeur max
+      className="mx-auto flex flex-col gap-8 w-full max-w-xl"
     >
       {skills.map((skill) => (
         <div

@@ -23,14 +23,14 @@ const Code = ({
 };
 
 export const Hero = () => {
-  const { greeting, name, title, introduction } = content.hero;
+  const { greeting, name } = content.hero;
 
   const words = [
+    { text: "Développeur" },
     { text: "React" },
     { text: "Next.js" },
     { text: "Tailwind" },
     { text: "CSS" },
-    { text: "Developer" },
   ];
 
   return (
@@ -43,8 +43,6 @@ export const Hero = () => {
           </span>
           .
         </h2>
-
-        {/* Correction d'alignement avec flex et items-center */}
         <h3 className="text-2xl font-caption">
           <Code className="inline-flex items-center justify-center">
             <div className="flex items-center justify-center">
@@ -57,17 +55,17 @@ export const Hero = () => {
         </h3>
 
         <p className="text-base mt-2">
-          Welcome to my{" "}
+          Bienvenue sur mon{" "}
           <span className="font-medium text-brandSecondary dark:text-brandPrimary">
             portfolio
           </span>
-          ! I am a{" "}
+          ! Je suis un{" "}
           <span className="font-medium text-brandSecondary dark:text-brandPrimary">
-            junior developer
+            développeur junior
           </span>{" "}
-          looking for an{" "}
+          à la recherche d'une{" "}
           <span className="font-medium text-brandSecondary dark:text-brandPrimary">
-            apprenticeship
+            alternance
           </span>
           .
         </p>

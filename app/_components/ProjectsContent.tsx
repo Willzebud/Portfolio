@@ -20,6 +20,7 @@ const ProjectsContent = () => {
 
   return (
     <div className="font-mono">
+      {/* Modal */}
       <Dialog>
         <DialogTrigger asChild>
           <p className="cursor-pointer hover:text-brandSecondary dark:hover:text-brandPrimary transition duration-300 text-foreground">

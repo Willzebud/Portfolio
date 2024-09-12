@@ -28,7 +28,7 @@ export const PortfolioSection = () => {
             "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
-          Projects
+          Projets
         </button>
         <span>|</span>
         <button
@@ -40,7 +40,7 @@ export const PortfolioSection = () => {
             "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
-          About me
+          À propos
         </button>
         <span>|</span>
         <button

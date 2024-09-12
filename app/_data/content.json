@@ -1,27 +1,10 @@
 {
   "hero": {
-    "greeting": "Hello! I'm",
+    "greeting": "Salut! Je suis",
     "name": "Willyam",
-    "title": "React Next.js Tailwind CSS Developer",
-    "introduction": "Welcome to my portfolio! I am a junior developer looking for an apprenticeship."
-  },
-  "projects": {
-    "project1": {
-      "title": "Kasa",
-      "date": "Jui.2024",
-      "techStack": "React/React Router/Node.js",
-      "description": "Ce projet est une application Web de location immobilière développée en utilisant React, React Router, et Node.js.",
-      "realisationTitle": "Description de la Réalisation",
-      "realisationText": "Dans ce projet, j'ai implémenté le front-end d'une application de location immobilière en utilisant React et React Router pour créer une interface utilisateur moderne et réactive. Le projet s'appuie sur des données simulées extraites d'un fichier JSON et se concentre exclusivement sur le développement front-end, en se basant sur des maquettes fournies.",
-      "challengesTitle": "Problématiques Rencontrées et Solutions",
-      "challengesText": "Une des principales problématiques a été de gérer le routage entre les différentes pages de l'application. Pour surmonter ce défi, j'ai utilisé React Router, ce qui m'a permis de configurer facilement la navigation et de gérer les états des composants liés à la navigation. De plus, j'ai dû simuler des données extraites d'un fichier JSON, ce qui m'a appris à manipuler et afficher des données dynamiques dans une application React.",
-      "skillsTitle": "Compétences Développées",
-      "skillsText": "Ce projet m'a permis de renforcer mes compétences en développement front-end avec React et React Router, ainsi que d'acquérir une meilleure maîtrise de Node.js pour exécuter du code JavaScript en dehors du navigateur. J'ai également utilisé SASS pour gérer le CSS et j'ai implémenté des animations CSS pour améliorer l'expérience utilisateur.",
-      "codeLinkText": "Voir le projet sur GitHub",
-      "codeLinkUrl": "https://github.com/Willzebud/application_web_location_immobiliere_React"
-    }
+    "title": "Développeur React Next.js Tailwind CSS"
   },
   "aboutMe": {
-    "text": "Hello again! Thanks for scrolling this far! 👩‍💻..."
+    "text": "Rebonjour! Merci d'être allé jusqu'ici..."
   }
 }
