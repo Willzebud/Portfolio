@@ -14,23 +14,23 @@
       "codeLinkUrl": "https://github.com/Willzebud/application_web_location_immobiliere_React",
       "images": [
         {
-          "url": "/imagesProjects/Kasa-accueil.png",
+          "url": "/imagesProjects/Kasa-accueil.webp",
           "alt": "Page d'accueil de Kasa"
         },
         {
-          "url": "/imagesProjects/Kasa-carousel.png",
+          "url": "imagesProjects/Kasa-carousel.webp",
           "alt": "Première image du carousel"
         },
         {
-          "url": "/imagesProjects/Kasa-carousel2.png",
+          "url": "imagesProjects/Kasa-carousel2.webp",
           "alt": "Deuxième image du carousel"
         },
         {
-          "url": "/imagesProjects/Kasa-apropos.png",
+          "url": "/imagesProjects/Kasa-apropos.webp",
           "alt": "Page à propos de Kasa"
         },
         {
-          "url": "/imagesProjects/Kasa-apropos2.png",
+          "url": "/imagesProjects/Kasa-apropos2.webp",
           "alt": "Section de la page à propos"
         }
       ]
