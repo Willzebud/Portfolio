@@ -63,7 +63,7 @@ export const Hero = () => {
           <span className="font-medium text-brandSecondary dark:text-brandPrimary">
             développeur junior
           </span>{" "}
-          à la recherche d'une{" "}
+          à la recherche d&#39;une{" "}
           <span className="font-medium text-brandSecondary dark:text-brandPrimary">
             alternance
           </span>
