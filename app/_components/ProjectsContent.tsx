@@ -60,12 +60,6 @@ const ProjectsContent = () => {
           <div className="mt-4">
             <section className="mb-3">
               <h3 className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
-                {project1.realisationTitle}
-              </h3>
-              <p className="text-sm text-justify">{project1.realisationText}</p>
-            </section>
-            <section className="mb-3">
-              <h3 className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
                 {project1.challengesTitle}
               </h3>
               <p className="text-sm text-justify">{project1.challengesText}</p>

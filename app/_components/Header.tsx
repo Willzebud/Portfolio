@@ -7,6 +7,8 @@ import { Section } from "./Section";
 import { LinkedinIcon } from "./icons/LinkedinIcon";
 import { GithubIcon } from "./icons/GithubIcon";
 import { ModeToggle } from "./ModeToggle";
+import * as Dialog from "@radix-ui/react-dialog";
+import ContactForm from "@/components/ui/contactForm";
 
 export const Header = () => {
   return (
@@ -29,12 +31,32 @@ export const Header = () => {
           >
             <GithubIcon size={16} className="text-foreground" />
           </Link>
-          <Link
-            href=""
-            className={cn(buttonVariants({ variant: "outline" }), "h-6 px-1")}
-          >
-            Contact
-          </Link>
+
+          {/* Ajout de la modal le formulaire de contact */}
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "h-6 px-1"
+                )}
+              >
+                Contact
+              </button>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-50 z-50" />
+              <Dialog.Content className="fixed bg-background text-foreground p-6 max-w-lg w-full rounded-md top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 border dark:border-white">
+                <Dialog.Title className="text-lg font-bold mb-4 text-brandSecondary dark:text-brandPrimary text-center">
+                  Contactez-moi
+                </Dialog.Title>
+                <ContactForm />
+                <Dialog.Close className="absolute top-4 right-4">
+                  X
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         </ul>
       </Section>
     </header>
