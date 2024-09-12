@@ -3,6 +3,7 @@ import { Section } from "./Section";
 import { cn } from "@/lib/utils";
 import content from "@/app/_data/content.json";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import Image from "next/image";
 
 const Code = ({
   className,
@@ -71,8 +72,10 @@ export const Hero = () => {
         </p>
       </div>
       <div className="flex-shrink-0 mr-0">
-        <img
+        <Image
           src="/PhotoWillyamRbr.svg"
+          width={160}
+          height={160}
           className="w-full h-auto max-w-40 max-md:w-56"
           alt="willyam's picture"
         />
