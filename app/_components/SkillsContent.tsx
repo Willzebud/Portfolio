@@ -103,7 +103,7 @@ const SkillsContent = () => {
           className="flex items-center space-x-4 first:mt-2"
         >
           {/* Logo et nom */}
-          <div className="flex items-center space-x-2 w-1/3 sm:w-1/4">
+          <div className="flex items-center dark:text-white space-x-2 w-1/3 sm:w-1/4">
             {" "}
             {/* Ajustement des tailles */}
             <span className={`${textColor} w-6 sm:w-8`}>{skill.icon}</span>

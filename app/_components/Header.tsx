@@ -14,7 +14,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 py-4 bg-background">
       <Section className="flex items-center justify-between">
-        <h1 className="text-lg font-bold card-foreground font-caption">
+        <h1 className="text-lg font-bold card-foreground font-caption dark:text-white">
           Willyam Portfolio
         </h1>
         <ul className="flex items-center gap-2">
@@ -23,13 +23,16 @@ export const Header = () => {
             href="https://www.linkedin.com/in/willyamribiere/"
             className={cn(buttonVariants({ variant: "outline" }), "size-6 p-0")}
           >
-            <LinkedinIcon size={16} className="text-foreground" />
+            <LinkedinIcon
+              size={16}
+              className="text-foreground dark:text-white"
+            />
           </Link>
           <Link
             href="https://github.com/Willzebud/"
             className={cn(buttonVariants({ variant: "outline" }), "size-6 p-0")}
           >
-            <GithubIcon size={16} className="text-foreground" />
+            <GithubIcon size={16} className="text-foreground dark:text-white" />
           </Link>
 
           {/* Ajout de la modal le formulaire de contact */}
@@ -38,7 +41,7 @@ export const Header = () => {
               <button
                 className={cn(
                   buttonVariants({ variant: "outline" }),
-                  "h-6 px-1"
+                  "h-6 px-1 dark:text-white"
                 )}
               >
                 Contact

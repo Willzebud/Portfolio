@@ -23,7 +23,7 @@ const ProjectsContent = () => {
       {/* Modal */}
       <Dialog>
         <DialogTrigger asChild>
-          <p className="cursor-pointer hover:text-brandSecondary dark:hover:text-brandPrimary transition duration-300 text-foreground">
+          <p className="cursor-pointer hover:text-brandSecondary dark:hover:text-brandPrimary transition duration-300 text-foreground dark:text-white">
             <span className="font-mono text-3xl">{project1.title}</span>{" "}
             <span className="font-normal font-mono">
               {project1.date}/{project1.techStack}
@@ -53,7 +53,7 @@ const ProjectsContent = () => {
             <DialogTitle className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
               {project1.realisationTitle}
             </DialogTitle>
-            <DialogDescription className="text-sm text-foreground">
+            <DialogDescription className="text-sm text-foreground dark:text-white">
               {project1.description}
             </DialogDescription>
           </DialogHeader>
@@ -62,19 +62,23 @@ const ProjectsContent = () => {
               <h3 className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
                 {project1.challengesTitle}
               </h3>
-              <p className="text-sm text-justify">{project1.challengesText}</p>
+              <p className="text-sm text-justify dark:text-white">
+                {project1.challengesText}
+              </p>
             </section>
             <section className="mb-3">
               <h3 className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
                 {project1.skillsTitle}
               </h3>
-              <p className="text-sm text-justify">{project1.skillsText}</p>
+              <p className="text-sm text-justify dark:text-white">
+                {project1.skillsText}
+              </p>
             </section>
             <section className="mb-3">
               <h3 className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
                 Lien vers le Code
               </h3>
-              <p className="text-sm text-justify">
+              <p className="text-sm text-justify dark:text-white">
                 Vous pouvez consulter le code source complet sur GitHub :{" "}
                 <a
                   href={project1.codeLinkUrl}

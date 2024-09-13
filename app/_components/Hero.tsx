@@ -37,7 +37,7 @@ export const Hero = () => {
   return (
     <Section className="flex max-lg:flex-col items-center justify-between gap-6">
       <div className="flex-[2] flex flex-col gap-2">
-        <h2 className="font-caption font-bold text-5xl">
+        <h2 className="font-caption font-bold text-5xl dark:text-white">
           {greeting}{" "}
           <span className="text-brandSecondary dark:text-brandPrimary">
             {name}
@@ -55,17 +55,17 @@ export const Hero = () => {
           </Code>
         </h3>
 
-        <p className="text-base mt-2">
+        <p className="text-base mt-2 dark:text-white">
           Bienvenue sur mon{" "}
-          <span className="font-medium text-brandSecondary dark:text-brandPrimary">
+          <span className="font-bold text-brandSecondary dark:text-brandPrimary">
             portfolio
           </span>
           ! Je suis un{" "}
-          <span className="font-medium text-brandSecondary dark:text-brandPrimary">
+          <span className="font-bold text-brandSecondary dark:text-brandPrimary">
             développeur junior
           </span>{" "}
           à la recherche d&#39;une{" "}
-          <span className="font-medium text-brandSecondary dark:text-brandPrimary">
+          <span className="font-bold text-brandSecondary dark:text-brandPrimary">
             alternance
           </span>
           .

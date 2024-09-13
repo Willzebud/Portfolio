@@ -16,7 +16,7 @@ export const PortfolioSection = () => {
   };
 
   return (
-    <Section className="flex flex-col items-center gap-6">
+    <Section className="flex flex-col items-center gap-6 dark:text-white">
       {/* Navigation Tabs */}
       <nav className="flex space-x-4 text-lg font-medium">
         <button
@@ -24,7 +24,7 @@ export const PortfolioSection = () => {
           className={cn(
             activeTab === "projects"
               ? "text-brandSecondary dark:text-brandPrimary"
-              : "text-foreground",
+              : "text-foreground dark:text-white",
             "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
@@ -36,7 +36,7 @@ export const PortfolioSection = () => {
           className={cn(
             activeTab === "about"
               ? "text-brandSecondary dark:text-brandPrimary"
-              : "text-foreground",
+              : "text-foreground dark:text-white",
             "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
@@ -48,7 +48,7 @@ export const PortfolioSection = () => {
           className={cn(
             activeTab === "skills"
               ? "text-brandSecondary dark:text-brandPrimary"
-              : "text-foreground",
+              : "text-foreground dark:text-white",
             "hover:text-brandSecondary dark:hover:text-brandPrimary transition-colors duration-300"
           )}
         >
