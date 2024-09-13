@@ -51,7 +51,7 @@ export const Header = () => {
                   Contactez-moi
                 </Dialog.Title>
                 <ContactForm />
-                <Dialog.Close className="absolute top-4 right-4">
+                <Dialog.Close className="absolute top-4 right-4 text-brandSecondary dark:text-brandPrimary">
                   X
                 </Dialog.Close>
               </Dialog.Content>
