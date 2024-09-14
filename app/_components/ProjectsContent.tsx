@@ -14,6 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import projectsContent from "@/app/_data/projectsContent.json";
+import Image from "next/image";
 
 const ProjectsContent = () => {
   const { project1 } = projectsContent.projects;
@@ -23,7 +24,7 @@ const ProjectsContent = () => {
       {/* Modal */}
       <Dialog>
         <DialogTrigger asChild>
-          <p className="cursor-pointer hover:text-brandSecondary dark:hover:text-brandPrimary transition duration-300 text-foreground dark:text-white">
+          <p className="cursor-pointer hover:text-brandSecondary dark:hover:text-brandPrimary transition duration-300 text-foreground dark:text-white p-4">
             <span className="font-mono text-3xl">{project1.title}</span>{" "}
             <span className="font-normal font-mono">
               {project1.date}/{project1.techStack}
@@ -37,10 +38,15 @@ const ProjectsContent = () => {
               <CarouselContent>
                 {project1.images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="p-1">
-                      <img
+                    <div className="p-1 relative w-full h-full">
+                      {" "}
+                      {/* position relative pour le layout "fill" */}
+                      <Image
                         src={image.url}
                         alt={image.alt}
+                        layout="responsive"
+                        width={500}
+                        height={500}
                         className="aspect-square object-contain w-full h-full"
                       />
                     </div>
