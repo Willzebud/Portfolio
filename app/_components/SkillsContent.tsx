@@ -10,14 +10,14 @@ import { StrapiIcon } from "./icons/StrapiIcon";
 const skills = [
   {
     name: "JavaScript",
-    level: "35%",
+    level: "65%",
     darkColor: "bg-[#FF6F00]",
     lightColor: "bg-[#9E0000]",
     icon: <JavaScriptIcon size={30} />,
   },
   {
     name: "React",
-    level: "33%",
+    level: "63%",
     darkColor: "bg-[#FF9A13]",
     lightColor: "bg-[#B60101]",
     icon: (
@@ -30,28 +30,28 @@ const skills = [
   },
   {
     name: "TypeScript",
-    level: "28%",
+    level: "58%",
     darkColor: "bg-[#FFA726]",
     lightColor: "bg-[#C80000]",
     icon: <TypeScriptIcon size={30} />,
   },
   {
     name: "Next.js",
-    level: "31%",
+    level: "61%",
     darkColor: "bg-[#FFCA28]",
     lightColor: "bg-[#D60000]",
     icon: <NextJsIcon size={30} />,
   },
   {
     name: "TailWind",
-    level: "30%",
+    level: "60%",
     darkColor: "bg-[#FFD54F]",
     lightColor: "bg-[#E00000]",
     icon: <TailWindIcon size={30} />,
   },
   {
     name: "Strapi",
-    level: "23%",
+    level: "53%",
     darkColor: "bg-[#FEE287]",
     lightColor: "bg-[#ED0100]",
     icon: <StrapiIcon size={30} />,
@@ -95,7 +95,7 @@ const SkillsContent = () => {
     <div
       id="skills-section"
       ref={skillsSectionRef}
-      className="mx-auto flex flex-col gap-8 w-full max-w-xl"
+      className="mx-auto flex flex-col gap-8 w-full max-w-xl p-2"
     >
       {skills.map((skill) => (
         <div

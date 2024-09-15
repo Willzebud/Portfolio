@@ -31,30 +31,30 @@ const ProjectsContent = () => {
             </span>
           </p>
         </DialogTrigger>
-        <DialogContent className="max-w-md max-h-[75vh] overflow-y-auto bg-background text-foreground">
+        <DialogContent className="max-w-2xl max-h-[75vh] overflow-y-auto bg-background text-foreground">
           <DialogHeader>
             {/* Carousel */}
-            <Carousel className="w-full max-w-xs mx-auto">
+            <Carousel className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
               <CarouselContent>
                 {project1.images.map((image, index) => (
                   <CarouselItem key={index}>
-                    <div className="p-1 relative w-full h-full">
+                    <div className="p-1 relative w-full h-full h-auto">
                       {" "}
                       {/* position relative pour le layout "fill" */}
                       <Image
                         src={image.url}
                         alt={image.alt}
                         layout="responsive"
-                        width={500}
-                        height={500}
+                        width={900}
+                        height={900}
                         className="aspect-square object-contain w-full h-full"
                       />
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="absolute -left-9 top-1/2 transform -translate-y-1/2 z-10" />
-              <CarouselNext className="absolute -right-9 top-1/2 transform -translate-y-1/2 z-10" />
+              <CarouselPrevious className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10" />
+              <CarouselNext className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10" />
             </Carousel>
             <DialogTitle className="font-semibold text-base text-brandSecondary dark:text-brandPrimary">
               {project1.realisationTitle}
