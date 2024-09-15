@@ -2,11 +2,13 @@ import { useState } from "react";
 
 export default function ContactForm() {
   const [formStatus, setFormStatus] = useState("");
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false); // Nouvel état pour désactiver le bouton
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    setIsButtonDisabled(true);
 
+    const formData = new FormData(event.currentTarget);
     formData.append("access_key", "94819b83-cd20-452f-bbc5-7fe2f2062ffe");
 
     const object = Object.fromEntries(formData);
@@ -26,6 +28,7 @@ export default function ContactForm() {
       setFormStatus("Merci, votre message a été envoyé !");
     } else {
       setFormStatus("Une erreur est survenue, veuillez réessayer.");
+      setIsButtonDisabled(false);
     }
   }
 
@@ -78,7 +81,10 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-brandSecondary dark:bg-brandPrimary dark:text-black text-white font-semibold py-2 px-4 rounded-md"
+          className={`w-full bg-brandSecondary dark:bg-brandPrimary dark:text-black text-white font-semibold py-2 px-4 rounded-md ${
+            isButtonDisabled ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+          disabled={isButtonDisabled}
         >
           Envoyer
         </button>
