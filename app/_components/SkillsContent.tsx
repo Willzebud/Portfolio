@@ -11,8 +11,8 @@ const skills = [
   {
     name: "Fun & Humour",
     level: "100%",
-    darkColor: "bg-[#FF6F00]",
-    lightColor: "bg-[#9E0000]",
+    darkColor: "bg-[#FF3D00]",
+    lightColor: "bg-[#690000]",
     icon: <JavaScriptIcon size={30} />,
   },
   {
@@ -102,7 +102,7 @@ const SkillsContent = () => {
     <div
       id="skills-section"
       ref={skillsSectionRef}
-      className="mx-auto flex flex-col gap-8 w-full max-w-xl p-2 h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent pr-4" // Ajout de padding-right et configuration de la scrollbar
+      className="mx-auto flex flex-col gap-6 w-full max-w-xl h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-transparent pr-4" // Ajout de padding-right et configuration de la scrollbar
     >
       {skills.map((skill) => (
         <div
