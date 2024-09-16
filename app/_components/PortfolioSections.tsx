@@ -57,7 +57,7 @@ export const PortfolioSection = () => {
       </nav>
 
       <div className="w-full max-w-4xl h-96 bg-background border border-accent shadow-md transition-all duration-500">
-        <AuroraBackground className="w-full max-w-4xl h-96 mb-8">
+        <AuroraBackground className="w-full max-w-4xl h-96 mb-8 overflow-hidden">
           {activeTab === "projects" && <ProjectsContent />}
           {activeTab === "about" && <AboutMeContent />}
           {activeTab === "skills" && <SkillsContent />}
