@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import { FunnyIcon } from "./icons/FunnyIcon";
 import { JavaScriptIcon } from "./icons/JavaScriptIcon";
 import { ReactIcon } from "./icons/ReactIcon";
 import { TypeScriptIcon } from "./icons/TypeScriptIcon";
@@ -13,7 +14,13 @@ const skills = [
     level: "100%",
     darkColor: "bg-[#FF3D00]",
     lightColor: "bg-[#690000]",
-    icon: <JavaScriptIcon size={30} />,
+    icon: (
+      <FunnyIcon
+        size={35}
+        className="animate-spin"
+        style={{ animationDuration: "10s" }}
+      />
+    ),
   },
   {
     name: "JavaScript",
