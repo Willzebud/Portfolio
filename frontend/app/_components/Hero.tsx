@@ -1,9 +1,25 @@
-import { ComponentPropsWithoutRef } from "react";
+"use client";
+
+import { ComponentPropsWithoutRef, useEffect, useState } from "react";
 import { Section } from "./Section";
 import { cn } from "@/lib/utils";
-import content from "@/app/_data/content.json";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Image from "next/image";
+import axios from "axios";
+
+interface HeroContent {
+  greeting: string;
+  name: string;
+  title: string;
+  message: string;
+  profilPicture: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
+}
 
 const Code = ({
   className,
@@ -24,23 +40,49 @@ const Code = ({
 };
 
 export const Hero = () => {
-  const { greeting, name } = content.hero;
+  const [heroContent, setHeroContent] = useState<HeroContent | null>(null);
 
-  const words = [
-    { text: "Développeur" },
-    { text: "React" },
-    { text: "Next.js" },
-    { text: "Tailwind" },
-    { text: "CSS" },
-  ];
+  useEffect(() => {
+    const fetchHeroContent = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:1337/api/api-hero-contents?populate=*"
+        );
+        setHeroContent(response.data.data[0].attributes);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données :", error);
+      }
+    };
+
+    fetchHeroContent();
+  }, []);
+
+  if (!heroContent) {
+    return <div>Chargement...</div>;
+  }
+
+  const words = heroContent.title.split(" ").map((word) => ({ text: word }));
+
+  const styledMessage = (message: string) => {
+    const keywords = ["portfolio", "développeur junior", "alternance"];
+    let formattedMessage = message;
+    keywords.forEach((keyword) => {
+      const regex = new RegExp(`(${keyword})`, "gi");
+      formattedMessage = formattedMessage.replace(
+        regex,
+        `<span class="font-bold text-brandSecondary dark:text-brandPrimary">$1</span>`
+      );
+    });
+    return <span dangerouslySetInnerHTML={{ __html: formattedMessage }} />;
+  };
 
   return (
     <Section className="flex max-lg:flex-col items-center justify-between gap-6">
       <div className="flex-[2] flex flex-col gap-2">
         <h2 className="font-caption font-bold text-5xl dark:text-white">
-          {greeting}{" "}
+          {heroContent.greeting}{" "}
           <span className="text-brandSecondary dark:text-brandPrimary">
-            {name}
+            {heroContent.name}
           </span>
           .
         </h2>
@@ -56,24 +98,12 @@ export const Hero = () => {
         </h3>
 
         <p className="text-base mt-2 dark:text-white">
-          Bienvenue sur mon{" "}
-          <span className="font-bold text-brandSecondary dark:text-brandPrimary">
-            portfolio
-          </span>
-          ! Je suis un{" "}
-          <span className="font-bold text-brandSecondary dark:text-brandPrimary">
-            développeur junior
-          </span>{" "}
-          à la recherche d&#39;une{" "}
-          <span className="font-bold text-brandSecondary dark:text-brandPrimary">
-            alternance
-          </span>
-          .
+          {styledMessage(heroContent.message)}
         </p>
       </div>
       <div className="flex-shrink-0 mr-0">
         <Image
-          src="/PhotoWillyamRbr.svg"
+          src={`http://localhost:1337${heroContent.profilPicture.data.attributes.url}`}
           width={160}
           height={160}
           className="w-full h-auto max-w-40 max-md:w-56"

@@ -362,53 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiApiProjectsContentApiProjectsContent
-  extends Schema.CollectionType {
-  collectionName: 'api_projects_contents';
-  info: {
-    singularName: 'api-projects-content';
-    pluralName: 'api-projects-contents';
-    displayName: 'API Projects Content';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    projectNumber: Attribute.Integer;
-    title: Attribute.String;
-    date: Attribute.String;
-    techStack: Attribute.String;
-    description: Attribute.Text;
-    realisationTitle: Attribute.String;
-    realisationText: Attribute.Text;
-    challengesTitle: Attribute.String;
-    challengesText: Attribute.Text;
-    skillsTitle: Attribute.String;
-    skillsText: Attribute.Text;
-    codeLinkText: Attribute.String;
-    codeLinkUrl: Attribute.String;
-    projectImages: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::api-projects-content.api-projects-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::api-projects-content.api-projects-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -835,6 +788,119 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiApiAboutMeContentApiAboutMeContent
+  extends Schema.CollectionType {
+  collectionName: 'api_about_me_contents';
+  info: {
+    singularName: 'api-about-me-content';
+    pluralName: 'api-about-me-contents';
+    displayName: 'API About Me Content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutMe: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::api-about-me-content.api-about-me-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::api-about-me-content.api-about-me-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiApiHeroContentApiHeroContent extends Schema.CollectionType {
+  collectionName: 'api_hero_contents';
+  info: {
+    singularName: 'api-hero-content';
+    pluralName: 'api-hero-contents';
+    displayName: 'API Hero Content';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    greeting: Attribute.String;
+    name: Attribute.String;
+    title: Attribute.String;
+    profilPicture: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::api-hero-content.api-hero-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::api-hero-content.api-hero-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiApiProjectsContentApiProjectsContent
+  extends Schema.CollectionType {
+  collectionName: 'api_projects_contents';
+  info: {
+    singularName: 'api-projects-content';
+    pluralName: 'api-projects-contents';
+    displayName: 'API Projects Content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    projectNumber: Attribute.Integer;
+    title: Attribute.String;
+    date: Attribute.String;
+    techStack: Attribute.String;
+    description: Attribute.Text;
+    realisationTitle: Attribute.String;
+    realisationText: Attribute.Text;
+    challengesTitle: Attribute.String;
+    challengesText: Attribute.Text;
+    skillsTitle: Attribute.String;
+    skillsText: Attribute.Text;
+    codeLinkText: Attribute.String;
+    codeLinkUrl: Attribute.String;
+    projectImages: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::api-projects-content.api-projects-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::api-projects-content.api-projects-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -845,7 +911,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::api-projects-content.api-projects-content': ApiApiProjectsContentApiProjectsContent;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -854,6 +919,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::api-about-me-content.api-about-me-content': ApiApiAboutMeContentApiAboutMeContent;
+      'api::api-hero-content.api-hero-content': ApiApiHeroContentApiHeroContent;
+      'api::api-projects-content.api-projects-content': ApiApiProjectsContentApiProjectsContent;
     }
   }
 }
