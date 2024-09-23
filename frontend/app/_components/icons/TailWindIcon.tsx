@@ -1,8 +1,11 @@
 import { ComponentPropsWithoutRef } from "react";
+import { useTheme } from "next-themes";
 
 export const TailWindIcon = (
   props: ComponentPropsWithoutRef<"svg"> & { size?: number }
 ) => {
+  const { theme } = useTheme();
+
   return (
     <svg
       width={props.size}
@@ -20,8 +23,14 @@ export const TailWindIcon = (
           y2="67.5555556%"
           id="linearGradient-1"
         >
-          <stop stop-color="currentColor" offset="0%"></stop>
-          <stop stop-color="currentColor" offset="100%"></stop>
+          <stop
+            stopColor={theme === "dark" ? "#FFFFFF" : "#000000"}
+            offset="0%"
+          ></stop>
+          <stop
+            stopColor={theme === "dark" ? "#FFFFFF" : "#000000"}
+            offset="100%"
+          ></stop>
         </linearGradient>
       </defs>
       <g>

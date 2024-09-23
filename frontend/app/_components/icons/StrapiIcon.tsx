@@ -1,10 +1,10 @@
 import { ComponentPropsWithoutRef } from "react";
-import { useTheme } from "next-themes"; // Import du hook pour gérer les thèmes
+import { useTheme } from "next-themes";
 
 export const StrapiIcon = (
   props: ComponentPropsWithoutRef<"svg"> & { size?: number }
 ) => {
-  const { theme } = useTheme(); // Utilisation du hook pour connaître le thème actuel
+  const { theme } = useTheme();
 
   return (
     <svg
@@ -17,17 +17,14 @@ export const StrapiIcon = (
     >
       <title>Strapi</title>
       <g>
-        {/* Fond */}
         <rect
           width="256"
           height="256"
-          fill={theme === "dark" ? "#FFFFFF" : "#000000"} // Changement de couleur selon le thème
+          fill={theme === "dark" ? "#FFFFFF" : "#000000"}
         />
-
-        {/* Logo Strapi */}
         <path
           d="M176.64,77.6532528 L90.4527698,77.6532528 L90.4527698,121.6 L134.4,121.6 L134.4,165.546264 L178.346264,165.546264 L178.346264,79.36 C178.346264,78.4173887 177.581887,77.6532528 176.64,77.6532528 Z"
-          fill={theme === "dark" ? "#000000" : "#FFFFFF"} // Inversion des couleurs selon le thème
+          fill={theme === "dark" ? "#000000" : "#FFFFFF"}
         ></path>
         <rect
           fill={theme === "dark" ? "#000000" : "#FFFFFF"}

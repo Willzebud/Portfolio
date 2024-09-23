@@ -901,6 +901,41 @@ export interface ApiApiProjectsContentApiProjectsContent
   };
 }
 
+export interface ApiApiSkillsContentApiSkillsContent
+  extends Schema.CollectionType {
+  collectionName: 'api_skills_contents';
+  info: {
+    singularName: 'api-skills-content';
+    pluralName: 'api-skills-contents';
+    displayName: 'API Skills Content';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    skillName: Attribute.String;
+    skillLevel: Attribute.Integer;
+    skillIcon: Attribute.String;
+    skillID: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::api-skills-content.api-skills-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::api-skills-content.api-skills-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -922,6 +957,7 @@ declare module '@strapi/types' {
       'api::api-about-me-content.api-about-me-content': ApiApiAboutMeContentApiAboutMeContent;
       'api::api-hero-content.api-hero-content': ApiApiHeroContentApiHeroContent;
       'api::api-projects-content.api-projects-content': ApiApiProjectsContentApiProjectsContent;
+      'api::api-skills-content.api-skills-content': ApiApiSkillsContentApiSkillsContent;
     }
   }
 }
