@@ -103,7 +103,7 @@ export const Hero = () => {
       </div>
       <div className="flex-shrink-0 mr-0">
         <Image
-          src={`https://wr-portfolio-268f1ff6ebd6.herokuapp.com${heroContent.profilPicture.data.attributes.url}`}
+          src={heroContent.profilPicture.data.attributes.url}
           width={160}
           height={160}
           className="w-full h-auto max-w-40 max-md:w-56"
