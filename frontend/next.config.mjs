@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost"],
+    domains: ["res.cloudinary.com"],
   },
   env: {
-    domaine: "http://localhost:1337",
+    domaine: "https://wr-portfolio-268f1ff6ebd6.herokuapp.com",
   },
 };
 

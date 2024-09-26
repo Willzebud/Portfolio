@@ -12,7 +12,7 @@ const AboutMeContent = () => {
     const fetchAboutMeData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/api-about-me-contents"
+          "https://wr-portfolio-268f1ff6ebd6.herokuapp.com/api/api-about-me-contents"
         );
         setAboutMe(response.data.data[0].attributes);
       } catch (error) {

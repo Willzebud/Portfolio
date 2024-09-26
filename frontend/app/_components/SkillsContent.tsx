@@ -53,7 +53,7 @@ const SkillsContent = () => {
     const fetchSkills = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/api-skills-contents"
+          "https://wr-portfolio-268f1ff6ebd6.herokuapp.com/api/api-skills-contents"
         );
         setSkills(response.data.data.map((skill: any) => skill.attributes));
       } catch (error) {

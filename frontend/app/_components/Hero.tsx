@@ -46,7 +46,7 @@ export const Hero = () => {
     const fetchHeroContent = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/api-hero-contents?populate=*"
+          "https://wr-portfolio-268f1ff6ebd6.herokuapp.com/api/api-hero-contents?populate=*"
         );
         setHeroContent(response.data.data[0].attributes);
       } catch (error) {
@@ -103,7 +103,7 @@ export const Hero = () => {
       </div>
       <div className="flex-shrink-0 mr-0">
         <Image
-          src={`http://localhost:1337${heroContent.profilPicture.data.attributes.url}`}
+          src={`https://wr-portfolio-268f1ff6ebd6.herokuapp.com${heroContent.profilPicture.data.attributes.url}`}
           width={160}
           height={160}
           className="w-full h-auto max-w-40 max-md:w-56"

@@ -57,7 +57,7 @@ const ProjectsContent = () => {
     const fetchProjectsData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/api-projects-contents?populate=*"
+          "https://wr-portfolio-268f1ff6ebd6.herokuapp.com/api/api-projects-contents?populate=*"
         );
         setProjects(
           response.data.data.map((project: any) => project.attributes)
@@ -97,7 +97,7 @@ const ProjectsContent = () => {
                       <CarouselItem key={index}>
                         <div className="p-1 relative w-full h-full h-auto">
                           <Image
-                            src={process.env.domaine + imageUrl}
+                            src={imageUrl}
                             alt={imageData.attributes.alternativeText}
                             width={900}
                             height={900}
