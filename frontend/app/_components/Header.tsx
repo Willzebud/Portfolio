@@ -22,6 +22,7 @@ export const Header = () => {
           <Link
             href="https://www.linkedin.com/in/willyamribiere/"
             className={cn(buttonVariants({ variant: "outline" }), "size-6 p-0")}
+            aria-label="LinkedIn"
           >
             <LinkedinIcon
               size={16}
@@ -31,6 +32,7 @@ export const Header = () => {
           <Link
             href="https://github.com/Willzebud/"
             className={cn(buttonVariants({ variant: "outline" }), "size-6 p-0")}
+            aria-label="GitHub"
           >
             <GithubIcon size={16} className="text-foreground dark:text-white" />
           </Link>
