@@ -1,16 +1,14 @@
 "use client";
 
-// Importation du ThemeProvider de la bibliothèque `next-themes`
+// @ts-ignore
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ReactNode } from "react";
 
-// Interface pour typer les props du composant
 interface ThemeProviderProps {
-  children: ReactNode; // Le composant prend en props des enfants à afficher
+  children: ReactNode;
 }
 
-// Composant ThemeProvider
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  // Utilisation de NextThemesProvider pour fournir le contexte de thème aux enfants
+  // @ts-ignore
   return <NextThemesProvider attribute="class">{children}</NextThemesProvider>;
 }
