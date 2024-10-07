@@ -7,6 +7,7 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import Image from "next/image";
 import axios from "axios";
 
+// Interface pour définir la structure des données du contenu "Hero"
 interface HeroContent {
   greeting: string;
   name: string;
@@ -21,6 +22,7 @@ interface HeroContent {
   };
 }
 
+// Composant Code pour styliser des morceaux de texte
 const Code = ({
   className,
   children,
@@ -39,9 +41,12 @@ const Code = ({
   );
 };
 
+// Composant Hero pour afficher le contenu principal en haut de la page d'accueil
 export const Hero = () => {
+  // État pour stocker le contenu "Hero"
   const [heroContent, setHeroContent] = useState<HeroContent | null>(null);
 
+  // useEffect pour récupérer les données "Hero" à partir de l'API Strapi
   useEffect(() => {
     const fetchHeroContent = async () => {
       try {
@@ -57,12 +62,15 @@ export const Hero = () => {
     fetchHeroContent();
   }, []);
 
+  // Si les données ne sont pas encore récupérées, afficher "Chargement"
   if (!heroContent) {
     return <div>Chargement...</div>;
   }
 
+  // Diviser le titre en mots pour l'effet machine à écrire
   const words = heroContent.title.split(" ").map((word) => ({ text: word }));
 
+  // Fonction pour styliser des mots spécifiques dans le message avec des classes CSS
   const styledMessage = (message: string) => {
     const keywords = ["portfolio", "développeur junior", "alternance"];
     let formattedMessage = message;
@@ -76,9 +84,12 @@ export const Hero = () => {
     return <span dangerouslySetInnerHTML={{ __html: formattedMessage }} />;
   };
 
+  // Retourner le JSX principal pour le composant Hero
   return (
     <Section className="flex max-lg:flex-col items-center justify-between gap-6">
+      {/* Contenu textuel du Hero */}
       <div className="flex-[2] flex flex-col gap-2">
+        {/* Salutation et nom */}
         <h2 className="font-caption font-bold text-5xl dark:text-white">
           {heroContent.greeting}{" "}
           <span className="text-brandSecondary dark:text-brandPrimary">
@@ -86,6 +97,8 @@ export const Hero = () => {
           </span>
           .
         </h2>
+
+        {/* Titre avec effet de machine à écrire */}
         <h3 className="text-2xl font-caption">
           <Code className="inline-flex items-center justify-center">
             <div className="flex items-center justify-center">
@@ -97,10 +110,13 @@ export const Hero = () => {
           </Code>
         </h3>
 
+        {/* Message stylisé */}
         <p className="text-base mt-2 dark:text-white">
           {styledMessage(heroContent.message)}
         </p>
       </div>
+
+      {/* Image de profil */}
       <div className="flex-shrink-0 mr-0">
         <Image
           src={heroContent.profilPicture.data.attributes.url}

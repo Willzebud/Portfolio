@@ -47,7 +47,16 @@ const SkillsContent = () => {
   const [skills, setSkills] = useState<Skill[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const skillsSectionRef = useRef<HTMLDivElement | null>(null);
-  const { theme } = useTheme();
+
+  // Vérification du thème par défaut lors de l'arrivée sur le site
+  const { theme, setTheme, resolvedTheme } = useTheme();
+
+  // Ajuster le thème une fois qu'il est défini
+  useEffect(() => {
+    if (resolvedTheme === "dark") {
+      setTheme("dark");
+    }
+  }, [resolvedTheme, setTheme]);
 
   useEffect(() => {
     const fetchSkills = async () => {
@@ -103,7 +112,6 @@ const SkillsContent = () => {
           lightColor: "#9E0000",
         };
 
-        // Définir la classe d'animation seulement pour les icônes Fun & Humour et React
         const iconClassName =
           skill.skillName === "Fun & Humour" || skill.skillName === "React"
             ? "animate-spin"
